@@ -1,273 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Keep Rollin’ | Charcoal BBQ Rolls, Burgers &amp; Shawarma in Karachi</title>
-<meta name="description" content="Roll specialists in Shah Faisal Colony, Karachi. Charcoal-grilled boti, rolls, burgers and shawarma. Open till 2 AM. Order on WhatsApp.">
-<meta name="theme-color" content="#0b0b0b">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap">
-<style>
-:root{--bg:#0b0b0b;--card:#151515;--line:#2a2a2a;--fire:#f26b1d;--gold:#f7b32b;--cream:#fff6e6;--ash:#b5afa6;--wa:#25d366;--ease:cubic-bezier(.22,1,.36,1);--sp:cubic-bezier(.34,1.56,.64,1);--wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0 30Q100 0 200 30T400 30V60H0Z'/%3E%3C/svg%3E");color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
-*,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{margin:0;background:var(--bg);color:var(--cream);font:400 16px/1.6 Poppins,system-ui,sans-serif;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
-body:not(.on){overflow:hidden}
-h1,h2,h3{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.02em;line-height:.95;margin:0}
-a{color:inherit;text-decoration:none}
-.w{max-width:1120px;margin:0 auto;padding:0 20px}
-main,header,footer{position:relative;z-index:1}html,body,main{overflow-x:clip;max-width:100%}
-#fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-#pb{position:fixed;top:0;left:0;height:4px;width:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--fire),var(--gold));z-index:90}
-#glow{position:fixed;left:0;top:0;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;background:radial-gradient(circle,rgba(242,107,29,.22),transparent 65%);pointer-events:none;z-index:0;display:none}
-@media(hover:hover) and (pointer:fine){#glow{display:block}}
-.btn{display:inline-block;border:0;border-radius:12px;padding:13px 26px;font:600 15px Poppins,sans-serif;cursor:pointer;background:var(--fire);color:#fff;position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
-.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.45) 50%,transparent 65%);translate:-120% 0;animation:sheen 3.5s ease-in-out infinite}
-@keyframes sheen{60%,100%{translate:120% 0}}
-.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 30px rgba(242,107,29,.5)}.btn:active{transform:scale(.95)}
-.btn.g{background:var(--gold);color:#1a1200}.btn.o{background:transparent;border:2px solid #444;color:var(--cream)}.btn.wa{background:var(--wa);color:#04210f}.btn.k{background:#1a0a00;color:var(--cream)}
-:is(a,button):focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-/* header */
-header{position:sticky;z-index:40;top:env(safe-area-inset-top,0px);background:rgba(11,11,11,.7);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-header .w{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
-.logo{font:400 32px 'Bebas Neue';color:var(--gold);white-space:nowrap;animation:glowt 3s ease-in-out infinite}
-@keyframes glowt{50%{text-shadow:0 0 26px rgba(247,179,43,.7)}}
-nav{display:flex;gap:26px;font-size:14px;font-weight:500}nav a{color:var(--ash);position:relative;transition:color .3s}nav a:hover{color:var(--cream)}
-nav a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:linear-gradient(90deg,var(--fire),var(--gold));scale:0 1;transform-origin:left;transition:scale .35s var(--ease)}nav a:hover::after{scale:1}
-.hr{display:flex;gap:10px;align-items:center}
-.cb{display:inline-flex;align-items:center;gap:8px;background:none;border:2px solid #3a3a3a;color:var(--cream);border-radius:12px;padding:9px 14px;font:600 14px Poppins;cursor:pointer;transition:border-color .3s,transform .3s var(--sp)}.cb:hover{border-color:var(--fire)}
-#hb{min-width:22px;height:22px;border-radius:99px;background:var(--fire);font-size:12px;line-height:22px;text-align:center}#hb.bump{animation:bump .5s var(--sp)}
-@keyframes bump{35%{transform:scale(1.7)}}
-@media(max-width:820px){nav{display:none}}@media(max-width:520px){.hr>.btn{display:none}}
-/* loader */
-#ld{position:fixed;inset:0;z-index:200;background:var(--fire);color:#1a0a00;display:grid;place-items:center;transition:transform 1s cubic-bezier(.77,0,.18,1)}
-#ld::after{content:"";position:absolute;left:0;right:0;top:100%;height:60px;background:var(--fire);scale:1 -1;-webkit-mask:var(--wave) repeat-x/400px 100%;mask:var(--wave) repeat-x/400px 100%}
-#ld b{font-size:90px;animation:rb 1s ease-in-out infinite alternate}#ld p{position:absolute;bottom:14%;margin:0;font:400 30px 'Bebas Neue';letter-spacing:.1em}
-@keyframes rb{from{transform:translateX(-50px) rotate(-200deg)}to{transform:translateX(50px) rotate(200deg)}}
-body.on #ld{transform:translateY(calc(-100% - 70px))}
-/* hero */
-.hero{position:relative;padding:60px 0 110px;overflow:hidden}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none;animation:pu 6s ease-in-out infinite}
-.hero::before{width:900px;height:900px;right:-260px;top:-300px;background:radial-gradient(circle,rgba(242,107,29,.35),transparent 65%)}
-.hero::after{width:700px;height:700px;left:-260px;bottom:-360px;background:radial-gradient(circle,rgba(247,179,43,.18),transparent 65%);animation-delay:-3s}
-@keyframes pu{50%{opacity:.5;transform:scale(1.1)}}
-.hero .w{display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:center;position:relative;z-index:1}
-h1{font-size:clamp(58px,10vw,126px)}
-.ch{display:inline-block;white-space:nowrap}.ch i{display:inline-block;font-style:normal;opacity:0;transform:rotateX(-100deg) translateY(70%);transform-origin:50% 100%;transition:transform .9s var(--sp) calc(var(--i)*35ms + .5s),opacity .5s calc(var(--i)*35ms + .5s)}
-body.on .ch i{opacity:1;transform:none}
-.hl .ch i{background:linear-gradient(100deg,var(--gold),var(--fire),var(--gold));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 5s linear infinite}
-@keyframes shine{to{background-position:-200% 0}}
-.hero p{color:#cfc8bc;font-size:18px;max-width:470px;margin:18px 0 26px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.stats{display:flex;gap:30px;margin-top:32px;flex-wrap:wrap}.stats b{display:block;font:400 40px 'Bebas Neue';color:var(--gold);line-height:1}.stats span{font-size:13px;color:var(--ash)}
-.stage{position:relative;aspect-ratio:1;max-width:520px;width:100%;justify-self:center;--mx:0;--my:0}
-.stage::before{content:"";position:absolute;inset:6%;border-radius:50%;background:conic-gradient(from 0deg,var(--fire),var(--gold),transparent 40%,var(--fire));filter:blur(40px);opacity:.5;animation:sp 9s linear infinite}
-@keyframes sp{to{rotate:360deg}}
-.fd{position:absolute;translate:calc(var(--mx)*var(--dp)*1px) calc(var(--my)*var(--dp)*1px);filter:drop-shadow(0 26px 24px rgba(0,0,0,.6))}
-.fd svg{display:block;width:100%;animation:bob var(--t,6s) ease-in-out infinite}
-@keyframes bob{50%{transform:translateY(-16px) rotate(4deg)}}
-.f1{width:68%;left:16%;top:12%;--dp:-26}.f2{width:38%;left:-2%;bottom:6%;--dp:34;--t:5s}.f3{width:34%;right:0;bottom:12%;--dp:44;--t:7s}.f4{width:24%;right:8%;top:0;--dp:-50;--t:4.5s}
-.seal{position:absolute;right:-2%;top:44%;width:120px;height:120px;z-index:3;animation:sp 14s linear infinite}.seal text{font:400 15px 'Bebas Neue';letter-spacing:.12em;fill:var(--cream)}
-.seal span{position:absolute;inset:0;display:grid;place-items:center;font-size:36px;animation:sp 14s linear infinite reverse}
-.stk{position:absolute;left:var(--x);top:var(--y);z-index:0;font-size:clamp(34px,6vw,64px);line-height:1;pointer-events:none;translate:0 calc((var(--p,.5) - .5)*var(--k)*-2px);rotate:calc(var(--p,.5)*var(--r)*1deg);filter:drop-shadow(2px 0 0 #fff6e6) drop-shadow(-2px 0 0 #fff6e6) drop-shadow(0 8px 10px rgba(0,0,0,.35))}
-@media(max-width:820px){.hero .w{grid-template-columns:1fr}.stage{max-width:380px}}
-/* marquee */
-.mq{overflow:hidden;white-space:nowrap;padding:14px 0;font:400 clamp(40px,7vw,76px)/1 'Bebas Neue';background:var(--gold);color:#1a1200;border-block:3px solid #1a1200;rotate:-1.2deg;margin:-18px -4% 0;position:relative;z-index:3}
-.mq.b{rotate:1.2deg;background:#151515;color:transparent;-webkit-text-stroke:1.5px var(--gold);margin-top:-6px;z-index:2}
-.mq div{display:inline-block;will-change:transform}.mq span{margin:0 .35em}.mq em{font-style:normal;color:var(--fire);-webkit-text-stroke:0}
-/* sections */
-section{padding:70px 0;position:relative}
-.wv{position:absolute;left:0;right:0;height:60px;background:var(--c);-webkit-mask:var(--wave) repeat-x 0 0/400px 100%;mask:var(--wave) repeat-x 0 0/400px 100%;animation:wm 12s linear infinite;pointer-events:none}
-.wv.t{top:-59px}.wv.d{bottom:-59px;scale:1 -1;animation-direction:reverse}
-@keyframes wm{to{-webkit-mask-position:400px 0;mask-position:400px 0}}
-.jc{background:var(--fire);color:#1a0a00;text-align:center;--c:var(--fire);padding:110px 0 120px;z-index:1;margin-top:30px}
-.mega{font-size:clamp(64px,16vw,200px);line-height:.86}.mega .ln{display:block;translate:calc((.5 - var(--p,.5))*var(--d)*70vw) 0;opacity:clamp(0,calc(1.6 - var(--p,.5)*0 - abs(.5 - var(--p,.5))*2.4),1)}
-.mega .ln:nth-child(2){color:transparent;-webkit-text-stroke:2px #1a0a00}
-.jc p{max-width:52ch;margin:22px auto 26px;font-weight:500;color:#2a1304}
-.hd2{font-size:clamp(44px,7vw,72px)}.sub{color:var(--ash);margin:6px 0 20px}
-.tabs{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none;position:sticky;top:calc(64px + env(safe-area-inset-top,0px));z-index:5;background:rgba(11,11,11,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-.tabs button{white-space:nowrap;padding:9px 18px;border-radius:99px;border:1px solid var(--line);background:none;color:var(--ash);font:500 14px Poppins;cursor:pointer;transition:.3s var(--ease)}
-.tabs button.on{background:linear-gradient(100deg,var(--gold),var(--fire));color:#1a1200;border-color:transparent;font-weight:600;transform:scale(1.06)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;perspective:1000px;margin-top:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transform:rotateX(var(--tx,0deg)) rotateY(var(--ty,0deg));transition:transform .25s ease-out,border-color .3s,box-shadow .3s;animation:ci .7s var(--ease) both;animation-delay:calc(var(--i)*70ms)}
-@keyframes ci{from{opacity:0;transform:translateY(40px) rotateX(-18deg) scale(.94)}}
-.card:hover{border-color:var(--gold);box-shadow:0 20px 50px rgba(0,0,0,.6),0 10px 44px rgba(242,107,29,.3)}
-.ph{position:relative;aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 40%,#3a2210,#151515 70%)}
-.ph::before{content:"";position:absolute;width:140%;aspect-ratio:1;background:conic-gradient(from 0deg,transparent,rgba(247,179,43,.18),transparent 30%);animation:sp 8s linear infinite}
-.ph svg{width:62%;position:relative;transition:transform .7s var(--ease);animation:bob 5s ease-in-out infinite;animation-delay:calc(var(--i)*-.8s)}.card:hover .ph svg{transform:scale(1.18) rotate(-8deg)}
-.tg{position:absolute;top:10px;left:10px;background:var(--gold);color:#1a1200;font-size:11px;font-weight:600;padding:3px 10px;border-radius:7px;z-index:2}
-.bd{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}.bd b{font-weight:600;line-height:1.3}.bd small{color:var(--ash);font-size:13px;line-height:1.5;flex:1}
-.ft{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
-.pr{font:400 30px 'Bebas Neue';color:var(--gold)}
-.q{display:flex;align-items:center;gap:8px}.q button{width:38px;height:38px;border-radius:11px;border:1px solid var(--fire);background:none;color:var(--cream);font-size:20px;cursor:pointer;transition:transform .2s var(--sp),background .25s}.q button:hover{background:var(--fire)}.q button:active{transform:scale(.8)}
-.q button.ad{width:auto;padding:0 18px;font:600 14px Poppins;background:var(--fire)}.q span{min-width:18px;text-align:center;font-weight:600}
-.ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-top:18px}.ctile{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;color:inherit;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px;animation:ci .7s var(--ease) both;animation-delay:calc(var(--i)*70ms);transition:transform .3s var(--sp),border-color .3s,box-shadow .3s}.ctile:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 16px 40px rgba(242,107,29,.3)}.ctile .ci{display:block;width:96px;margin-bottom:6px}.ctile .ci svg{width:100%;display:block;animation:bob 5s ease-in-out infinite}.ctile b{font:400 34px 'Bebas Neue';color:var(--gold)}.ctile small{color:var(--ash)}.ctile.all{background:linear-gradient(135deg,var(--fire),#b8470b);justify-content:flex-end;min-height:150px}.ctile.all b{color:#fff}.ctile.all small{color:#ffe2c4}.bk{background:none;border:1px solid var(--fire);color:var(--cream);border-radius:99px;padding:9px 18px;font:600 14px Poppins;cursor:pointer;transition:background .3s}.bk:hover{background:var(--fire)}.deals{background:var(--card);border-block:1px solid var(--line)}
-.deals .card{border-color:var(--gold);background:linear-gradient(var(--card),var(--card)) padding-box,conic-gradient(from var(--a,0deg),var(--fire),var(--gold),var(--fire)) border-box;border:2px solid transparent;animation:ci .7s var(--ease) both,bs 4s linear infinite}
-@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}@keyframes bs{to{--a:360deg}}
-/* zoom */
-.zoom{height:250vh;padding:0}.stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
-.fr{position:absolute;inset:0;overflow:hidden;background:radial-gradient(circle at 50% 70%,#7a2a06,#1a0a00 70%);clip-path:inset(calc((1 - var(--z,0))*18%) calc((1 - var(--z,0))*28%) round calc((1 - var(--z,0))*36px))}
-.fl{position:absolute;bottom:-10%;width:34vmax;height:34vmax;border-radius:50%;background:radial-gradient(circle,rgba(247,179,43,.8),rgba(242,107,29,.5) 40%,transparent 70%);filter:blur(30px);animation:fl 3s ease-in-out infinite}
-@keyframes fl{50%{translate:0 -6%;scale:1.2;opacity:.7}}
-.fr .big{position:absolute;left:50%;top:50%;width:min(70vmin,520px);margin:calc(min(70vmin,520px)/-2) 0 0 calc(min(70vmin,520px)/-2);rotate:calc(var(--z,0)*200deg);scale:calc(.6 + var(--z,0)*.8);opacity:.5}
-.zt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px;opacity:clamp(0,calc(var(--z,0)*3 - .5),1);translate:0 calc((1 - var(--z,0))*60px)}
-.zt h2{font-size:clamp(70px,16vw,210px);text-shadow:0 8px 40px rgba(0,0,0,.6)}.zt p{margin:14px 0 22px;color:#f1e8d8}
-/* delivery */
-.dv{background:var(--gold);color:#1a1200;--c:var(--gold);padding:110px 0 124px;z-index:1}
-.dl{position:relative;min-height:520px}.dt{position:relative;z-index:2;max-width:580px}
-.dv h2{font-size:clamp(50px,8.4vw,108px)}.dv p{margin:16px 0 24px;font-weight:500;color:#3a2700;max-width:44ch}
-.tr{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}.tr path{fill:none;stroke-linecap:round}
-.bgp{stroke:rgba(26,18,0,.3);stroke-width:3;stroke-dasharray:3 14;animation:dm 2s linear infinite}@keyframes dm{to{stroke-dashoffset:-34}}
-.fgp{stroke:#1a1200;stroke-width:4}
-.rd{position:absolute;left:0;top:0;z-index:3;font-size:50px;margin:-30px 0 0 -30px;line-height:1}
-.pola{position:absolute;z-index:1;width:clamp(96px,17vw,180px);background:var(--cream);padding:9px 9px 30px;border-radius:6px;box-shadow:0 20px 44px rgba(60,20,0,.45);rotate:var(--r);transition:rotate .4s var(--sp),scale .4s var(--sp);animation:bob 5s ease-in-out infinite}
-.pola svg{width:100%;background:radial-gradient(circle,#ffd48a,#f26b1d);border-radius:3px;display:block}.pola:hover{rotate:0deg;scale:1.1}
-.pola i{position:absolute;left:0;right:0;bottom:6px;text-align:center;font:400 18px 'Bebas Neue';letter-spacing:.06em;color:#2a1304;font-style:normal}
-.d1{left:58%;top:0}.d2{left:74%;bottom:0;animation-delay:-2s}.d3{left:40%;bottom:0;animation-delay:-3s}
-@media(max-width:820px){.dl{min-height:700px}.pola{width:30vw}.d1{left:34%;top:auto;bottom:28%}.d2{left:64%}.d3{left:3%}}
-/* about */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:44px}.two p{color:var(--ash)}.inf p{margin:0 0 10px}.inf a:not(.btn){color:var(--gold)}
-.live{display:inline-flex;align-items:center;gap:8px;color:var(--wa);font-weight:600}.live::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--wa);animation:pg 1.6s infinite}
-@keyframes pg{0%{box-shadow:0 0 0 0 rgba(37,211,102,.7)}100%{box-shadow:0 0 0 14px transparent}}
-@media(max-width:820px){.two{grid-template-columns:1fr}}
-/* wordmark */
-.mk{overflow:hidden;text-align:center;padding:90px 0 60px}
-.wm{display:flex;justify-content:center;white-space:nowrap;font:400 clamp(48px,16vw,250px)/.9 'Bebas Neue';color:var(--fire);-webkit-text-stroke:.05em var(--cream);paint-order:stroke fill;text-shadow:0 .06em 0 #8a3207}
-.wm i{font-style:normal;display:inline-block;opacity:0;transform:translateY(60%) scale(.6) rotate(-8deg);transition:transform .7s var(--sp) calc(var(--i)*55ms),opacity .4s calc(var(--i)*55ms)}
-.wm.go i{opacity:1;transform:none;animation:wv 2.6s ease-in-out calc(var(--i)*-.2s) infinite}
-@keyframes wv{50%{transform:translateY(-.1em) rotate(-3deg)}}
-.wm .sp{width:.28em}
-footer{border-top:1px solid var(--line);padding:24px 0;color:var(--ash);font-size:14px;text-align:center}
-.rv{opacity:0;translate:0 40px;transition:opacity .9s var(--ease) var(--d,0ms),translate .9s var(--ease) var(--d,0ms)}.rv.in{opacity:1;translate:none}
-/* bar, cart */
-#bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid #333;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px))}
-#bar .r{max-width:1120px;margin:0 auto;display:flex;gap:10px;align-items:center;justify-content:space-between}#bar .r>div{display:flex;gap:8px}#bar .btn{padding:11px 18px;font-size:14px}#sm{font-size:14px;font-weight:600}
-#cw{position:fixed;inset:0;z-index:150;visibility:hidden;transition:visibility 0s .5s}#cw.open{visibility:visible;transition-delay:0s}
-#ov{position:absolute;inset:0;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;transition:opacity .4s}#cw.open #ov{opacity:1}
-#dr{position:absolute;top:0;right:0;bottom:0;width:min(440px,100vw);background:var(--card);border-left:1px solid #333;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .5s var(--ease);padding-top:env(safe-area-inset-top,0px)}#cw.open #dr{transform:none}
-.dh{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}.dh h3{font-size:36px;color:var(--gold)}
-.x{width:40px;height:40px;border-radius:10px;border:1px solid #3a3a3a;background:none;color:var(--cream);font-size:22px;cursor:pointer;transition:rotate .3s}.x:hover{rotate:90deg;border-color:var(--fire)}
-#ln{flex:1;overflow-y:auto;padding:8px 20px}
-.l{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);animation:ci .5s var(--ease) both}.l b{font-size:14px}.l .q{margin-top:8px}.l .q button{width:32px;height:32px}.lt{font:400 22px 'Bebas Neue';color:var(--gold)}
-.em{text-align:center;padding:60px 10px;color:var(--ash)}.em h4{font:400 32px 'Bebas Neue';color:var(--cream);margin:0 0 6px}
-.df{border-top:1px solid var(--line);padding:16px 20px calc(16px + env(safe-area-inset-bottom,0px));background:#121212}.tot{display:flex;justify-content:space-between;align-items:baseline;font-weight:600}.tot .pr{font-size:36px}
-.df p{margin:4px 0 14px;font-size:12px;color:var(--ash)}.df .btn{width:100%}.clr{display:block;margin:12px auto 0;background:none;border:0;color:var(--ash);font:500 13px Poppins;text-decoration:underline;cursor:pointer}
-#ts{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));translate:-50% 44px;scale:.94;background:var(--cream);color:#1a1200;padding:10px 18px;border-radius:99px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .3s,translate .5s var(--sp),scale .5s var(--sp);z-index:160;white-space:nowrap}#ts.show{opacity:1;translate:-50% 0;scale:1}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.ch i,.wm i,.rv{opacity:1;transform:none;translate:none}.mega .ln{opacity:1;translate:none}.zoom{height:auto}.stick{position:static;height:70vh}.fr{clip-path:none}}
-.fd img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;border:3px solid var(--cream);animation:bob var(--t,6s) ease-in-out infinite}
-.f1 img{aspect-ratio:3/4;border-radius:28px;border-color:rgba(247,179,43,.5)}
-.big{aspect-ratio:1}.big img{width:100%;height:100%;object-fit:cover;border-radius:36px;display:block}
-.pola img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:3px;display:block}
-.ctile .ci{width:100%;margin-bottom:10px;overflow:hidden;border-radius:12px}.ctile .ci img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s var(--ease)}.ctile:hover .ci img{transform:scale(1.06)}
-.ph>img{object-position:center}
-</style>
-</head>
-<body>
-<div id="ld" aria-hidden="true"><b>🌯</b><p>Firing up the charcoal...</p></div>
-<div id="pb"></div><div id="glow"></div><canvas id="fx" aria-hidden="true"></canvas>
-<header><div class="w"><a class="logo" href="#top">Keep Rollin’</a>
-<nav><a href="#menu">Menu</a><a href="#deals">Deals</a><a href="#delivery">Delivery</a><a href="#about">Find us</a></nav>
-<div class="hr"><button class="cb" type="button" id="oc" aria-label="Open cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6"/><circle cx="10" cy="20.5" r="1"/><circle cx="17" cy="20.5" r="1"/></svg><span id="hb">0</span></button><a class="btn" href="#menu">Order now</a></div></div></header>
-<main id="top">
-<div class="hero"><span class="stk" data-p style="--x:3%;--y:8%;--k:90;--r:80">🌶️</span><span class="stk" data-p style="--x:90%;--y:6%;--k:60;--r:-70">🔥</span><span class="stk" data-p style="--x:46%;--y:88%;--k:70;--r:90">🧅</span>
-<div class="w"><div><h1 data-split>Charcoal-grilled rolls,</h1><h1 class="hl" data-split>keep coming back.</h1>
-<p>Juicy boti, crispy golden paratha, zinger burgers and shawarma. Fresh to order in Shah Faisal Colony, open till 2 AM.</p>
-<div class="cta"><a class="btn wa" data-wa href="#">Order on WhatsApp</a><a class="btn o" href="#menu">View menu</a></div>
-<div class="stats"><div><b data-c="5" data-d="1">0</b><span>Google rating</span></div><div><b data-c="2" data-s=" AM">0</b><span>Open late</span></div><div><b data-c="100" data-s="%">0</b><span>Charcoal grilled</span></div></div></div>
-<div class="stage" id="stg"><div class="fd f1" data-img="burger"></div><div class="fd f2" data-img="chatni"></div><div class="fd f3" data-img="club"></div>
-<div class="seal"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="58" fill="#f26b1d"/><path id="cp" d="M60 60m-42 0a42 42 0 1 1 84 0a42 42 0 1 1-84 0" fill="none"/><text><textPath href="#cp">OPEN TILL 2 AM · CHARCOAL GRILLED ·</textPath></text></svg><span>🔥</span></div></div></div></div>
-<div class="mq" data-mq="-1"><div></div></div><div class="mq b" data-mq="1"><div></div></div>
-
-<section class="jc" data-p><i class="wv t" style="--c:var(--fire)"></i><span class="stk" data-p style="--x:6%;--y:14%;--k:120;--r:90">🌶️</span><span class="stk" data-p style="--x:88%;--y:10%;--k:80;--r:-80">🔥</span><span class="stk" data-p style="--x:10%;--y:72%;--k:70;--r:60">🥙</span><span class="stk" data-p style="--x:86%;--y:68%;--k:130;--r:-60">🍟</span>
-<div class="w"><h2 class="mega"><span class="ln" style="--d:-1">Smoky.</span><span class="ln" style="--d:1">Juicy.</span><span class="ln" style="--d:-1">Fully loaded.</span></h2><p class="rv">Chicken and beef marinated in our own spice blends, cooked over real charcoal and rolled into golden paratha.</p><a class="btn k rv" href="#menu">Order now</a></div><i class="wv d" style="--c:var(--fire)"></i></section>
-
-<section id="menu"><div class="w"><h2 class="hd2 rv">Our menu</h2><p class="sub rv">Add your favourites, then send the order on WhatsApp.</p><div class="tabs" id="tb"></div><div class="grid" id="gr"></div></div></section>
-<section class="deals" id="deals"><div class="w"><h2 class="hd2 rv">Meal deals</h2><p class="sub rv">More food, better value.</p><div class="grid" id="dl2"></div></div></section>
-
-<section class="zoom" id="zm"><div class="stick"><div class="fr"><i class="fl" style="left:-6%"></i><i class="fl" style="right:-6%;animation-delay:-1.2s"></i><i class="fl" style="left:30%;animation-delay:-2s"></i><div class="big" data-img="tikka1"></div></div><div class="zt"><h2>Hot off<br>the coals</h2><p>Fresh to order, every night till 2 AM.</p><a class="btn" href="#menu">See the menu</a></div></div></section>
-
-<section class="dv" id="delivery" data-p><i class="wv t" style="--c:var(--gold)"></i><div class="w dl" id="dlw"><svg class="tr" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true"><path class="bgp" d="M-20 360C140 360 160 190 320 215S500 340 580 255S760 50 1040 125"/><path class="fgp" id="rp" d="M-20 360C140 360 160 190 320 215S500 340 580 255S760 50 1040 125"/></svg>
-<div class="dt"><h2 class="rv">Late-night hunger, delivered hot.</h2><p class="rv">Send your order on WhatsApp and we will confirm delivery and charges for your area within minutes.</p><a class="btn wa rv" data-wa href="#">Order on WhatsApp</a></div>
-<figure class="pola d1" style="--r:6deg;margin:0" data-img="arabic"><i>Shawarma</i></figure><figure class="pola d2" style="--r:-5deg;margin:0" data-img="club"><i>Club sandwich</i></figure><figure class="pola d3" style="--r:-6deg;margin:0" data-img="chatni"><i>Chatni roll</i></figure><span class="rd" id="rd" aria-hidden="true">🛵</span></div><i class="wv d" style="--c:var(--gold)"></i></section>
-
-<section id="about"><div class="w two"><div><h2 class="hd2 rv">Our story</h2><p class="rv">Keep Rollin’ started with a simple obsession: the perfect roll. A golden, flaky paratha holding juicy charcoal-grilled boti, creamy sauce and a kick of fresh chutney in every bite.</p><p class="rv">From our grill in Shah Faisal Colony, we marinate chicken and beef in our own spice blends and cook it over real charcoal. Fresh ingredients, a clean kitchen and quick service, because hunger doesn’t wait.</p></div>
-<div class="inf rv"><h2 class="hd2">Find us</h2><p style="margin-top:12px"><b>Address:</b> Shop no. 8, Rafah-e-Aam Society, Shah Faisal Colony, Karachi 75210</p><p><b>Hours:</b> Open daily, closes 2 AM</p><p class="live">Fires are lit</p><p><b>Phone / WhatsApp:</b> <a href="tel:03702521668">0370 2521668</a></p><p><a class="btn g" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Keep+Rollin+Rafah+e+Aam+Society+Shah+Faisal+Colony+Karachi">Get directions</a></p></div></div></section>
-<section class="mk" aria-hidden="true"><div class="w"><div class="wm" id="wm"></div></div></section>
-</main>
-<footer>©️ Keep Rollin’ · Roll Specialist · Rolls, BBQ, Burgers, Sandwiches</footer>
-<div id="bar"><div class="r"><div id="sm">Your order is empty</div><div><a class="btn o" href="tel:03702521668">Call</a><button class="btn wa" type="button" id="vc">View cart</button></div></div></div>
-<div id="cw" aria-hidden="true"><div id="ov"></div><aside id="dr" role="dialog" aria-modal="true" aria-labelledby="ct"><div class="dh"><h3 id="ct">Your cart</h3><button class="x" type="button" id="cc" aria-label="Close cart">&times;</button></div><div id="ln"></div><div class="df"><div class="tot"><span>Subtotal</span><span class="pr" id="sb">Rs. 0</span></div><p>Delivery charges, if any, are confirmed on WhatsApp.</p><button class="btn wa" type="button" id="co">Checkout on WhatsApp</button><button class="clr" type="button" id="cl">Clear cart</button></div></aside></div>
-<div id="ts" role="status" aria-live="polite"></div>
-<script>
-(function(){
-var $=function(s){return document.querySelector(s)},$$=function(s){return[].slice.call(document.querySelectorAll(s))},R=matchMedia('(prefers-reduced-motion:reduce)').matches,WA='923702521668';
-/* PHOTOS: put these jpg files in an "images" folder next to this html file */
-var PIC={tikka1:"images/tikka1.jpg",tikka2:"images/tikka2.jpg",tikka3:"images/tikka3.jpg",tikka4:"images/tikka4.jpg",chatni:"images/chatni.jpg",garlic:"images/garlic.jpg",cheese:"images/cheese.jpg",fiery:"images/fiery.jpg",malaigarlic:"images/malaigarlic.jpg",sizzle:"images/sizzle.jpg",zwrap:"images/zwrap.jpg",reshmi:"images/reshmi.jpg",behari:"images/behari.jpg",beefgarlic:"images/beefgarlic.jpg",beefcheese:"images/beefcheese.jpg",arabic:"images/arabic.jpg",cshawarma:"images/cshawarma.jpg",afghani:"images/afghani.jpg",burger:"images/burger.jpg",club:"images/club.jpg",paratha:"images/paratha.jpg",wraps:"images/wraps.jpg"};
-var IMG={c1:PIC.tikka1,c2:PIC.tikka2,c3:PIC.tikka3,c4:PIC.tikka4,r1:PIC.chatni,r2:PIC.garlic,r3:PIC.cheese,r4:PIC.fiery,r5:PIC.malaigarlic,r6:PIC.sizzle,r7:PIC.zwrap,r8:PIC.reshmi,n1:PIC.behari,n2:PIC.beefgarlic,n3:PIC.beefcheese,s1:PIC.arabic,s2:PIC.cshawarma,b1:PIC.afghani,bg1:PIC.burger,bg2:PIC.club,x1:PIC.paratha,dfam:PIC.tikka1,dl1:PIC.burger,dl2:PIC.club,dl3:PIC.arabic,dl4:PIC.wraps};
-function F(t,c){var s='';
-if(t==0)s='<g transform="rotate(-25 50 50)"><rect x="12" y="34" width="76" height="34" rx="17" fill="#e2a64a" stroke="#b9772a" stroke-width="2"/><ellipse cx="84" cy="51" rx="7" ry="14" fill="'+c+'"/><circle cx="84" cy="46" r="3.5" fill="#7bb26a"/><path d="M24 43Q38 37 52 45T76 43" stroke="#fff3dc" stroke-width="3" fill="none"/><path d="M22 58Q40 64 60 58" stroke="#b9772a" stroke-width="2" fill="none"/></g>';
-else if(t==1)s='<path d="M16 46Q16 16 50 16T84 46Z" fill="#e2a64a"/><g fill="#fff3dc"><circle cx="36" cy="28" r="1.6"/><circle cx="52" cy="24" r="1.6"/><circle cx="66" cy="31" r="1.6"/></g><path d="M14 50Q24 58 33 50T50 50T67 50T86 50V54H14Z" fill="#7bb26a"/><rect x="16" y="55" width="68" height="10" rx="5" fill="'+c+'"/><path d="M18 65H82L75 73H25Z" fill="#f7b32b"/><path d="M16 75H84Q84 87 70 87H30Q16 87 16 75Z" fill="#e2a64a"/>';
-else if(t==2)s='<g transform="rotate(18 50 50)"><path d="M22 26H78L68 88H32Z" fill="#e2a64a"/><path d="M22 26H78L76 40H24Z" fill="'+c+'"/><path d="M28 26Q50 6 72 26" fill="#7bb26a"/><path d="M33 54H67M35 68H65" stroke="#b9772a" stroke-width="2"/></g>';
-else if(t==3)s='<circle cx="50" cy="50" r="42" fill="#1d1d1d" stroke="#f7b32b" stroke-opacity=".5"/><path d="M14 36L86 66" stroke="#c9a06a" stroke-width="2.5"/><g fill="'+c+'"><rect x="24" y="35" width="14" height="13" rx="4" transform="rotate(22 31 41)"/><rect x="43" y="43" width="14" height="13" rx="4" transform="rotate(22 50 49)"/><rect x="62" y="51" width="14" height="13" rx="4" transform="rotate(22 69 57)"/></g><path d="M26 74H74" stroke="#f26b1d" stroke-width="3" stroke-dasharray="3 5"/>';
-else s='<g fill="#f7b32b" stroke="#c98a14"><rect x="28" y="16" width="8" height="40" rx="2" transform="rotate(-12 32 36)"/><rect x="40" y="10" width="8" height="46" rx="2"/><rect x="52" y="14" width="8" height="42" rx="2" transform="rotate(8 56 35)"/><rect x="64" y="20" width="8" height="38" rx="2" transform="rotate(16 68 39)"/></g><path d="M24 50H76L70 90H30Z" fill="'+c+'"/><path d="M36 62H64" stroke="#fff3dc" stroke-width="3"/>';
-return'<svg viewBox="0 0 100 100" aria-hidden="true">'+s+'</svg>'}
-$$('[data-f]').forEach(function(e){e.insertAdjacentHTML('afterbegin',F(+e.dataset.f,e.dataset.c))});
-$$('[data-img]').forEach(function(e){e.insertAdjacentHTML('afterbegin','<img src="'+PIC[e.dataset.img]+'" alt="">')});
-/* split text */
-$$('[data-split]').forEach(function(h,k){var n=k*18,o='';h.textContent.split(' ').forEach(function(w){o+='<span class="ch">'+w.split('').map(function(c){return'<i style="--i:'+(n++)+'">'+c+'</i>'}).join('')+'</span> '});h.innerHTML=o});
-$$('.wm').forEach(function(w){var o='',i=0;'KEEP ROLLIN’'.split('').forEach(function(c){o+=c==' '?'<i class="sp"></i>':'<i style="--i:'+(i++)+'">'+c+'</i>'});w.innerHTML=o});
-/* marquee */
-var words=['Smoky','Juicy','Charcoal','Fully loaded','Open till 2 AM','Fresh to order'];
-$$('.mq').forEach(function(m){var h='';for(var r=0;r<6;r++)words.forEach(function(w,i){h+='<span>'+w+'</span><span><em>✦</em></span>'});m.firstChild.innerHTML=h;m._x=0;m._d=+m.dataset.mq});
-/* menu: [id, name, price, description, tag, fallback icon, fallback color] */
-var M=[["Charcoal BBQ", [["c1", "Hot & Spicy Tikka (Chest)", 450, "Spicy marinated tikka, charcoal-grilled. Smoky and juicy.", "Charcoal", 3, "#e0752b"], ["c2", "Hot & Spicy Tikka (Leg)", 400, "Spicy marinated tikka, charcoal-grilled. Smoky and juicy.", "Charcoal", 3, "#e0752b"], ["c3", "Hot & Spicy Charcoal BBQ Boti", 400, "Chicken in our special spice blend, grilled over hot charcoal.", "BBQ", 3, "#8a3a1c"], ["c4", "Juicy Malai Boti", 450, "Chicken thigh in cream and gentle spices. Melt-in-your-mouth tender.", "Malai", 3, "#f1d9a6"]]], ["Signature Rolls", [["r1", "Hot & Spicy Chatni Roll", 150, "Charcoal chicken, fiery homemade chutney, crispy paratha.", "Signature", 0, "#7bb26a"], ["r2", "Garlic Mayo Roll", 200, "Velvety garlic mayo with bold garlic notes. Rich and zesty.", "Signature", 0, "#fff3dc"], ["r3", "Melted Cheese Roll", 250, "Charcoal-grilled chicken smothered in melted cheese.", "Signature", 0, "#f7b32b"], ["r4", "Malai Boti Fiery Chatni Roll", 180, "Succulent malai boti with fiery chutney in crispy paratha.", "Signature", 0, "#7bb26a"], ["r5", "Garlic Mayo Malai Roll", 220, "Malai boti layered with velvety garlic mayo.", "Signature", 0, "#fff3dc"], ["r6", "Sizzling Roll Special", 280, "Juicy, smoky chicken bursting from a golden paratha.", "Signature", 0, "#c9441f"], ["r7", "Melted Cheese Zinger Wrap", 250, "Crispy zinger chicken with melted cheese in golden paratha.", "Signature", 0, "#f7b32b"], ["r8", "Reshmi Kabab Roll", 170, "Soft reshmi kabab, creamy sauces, fresh flavours.", "Signature", 0, "#fff3dc"]]], ["New Signature Rolls", [["n1", "Traditional Behari Boti Roll", 220, "Marinated Behari boti with our signature sauce in golden paratha.", "New", 0, "#b5532a"], ["n2", "Beef Garlic Mayo Roll", 250, "Juicy beef pieces layered with velvety garlic mayo.", "New", 0, "#fff3dc"], ["n3", "Beef Cheese Roll", 290, "Tender beef with luscious melted cheese. Rich and smoky.", "New", 0, "#f7b32b"]]], ["Shawarma", [["s1", "Arabic Shawarma", 220, "Grilled chicken, fresh veg and creamy sauce in a toasted wrap.", "New", 2, "#f3e2b8"], ["s2", "Melted Cheese Shawarma", 280, "Grilled chicken loaded with stretchy melted cheese.", "New", 2, "#f7b32b"]]], ["BBQ Special", [["b1", "Beef Afghani Boti", 100, "Tender beef cubes in aromatic Afghani spices, charcoal-grilled.", "BBQ", 3, "#8a3a1c"]]], ["Burgers & Sandwiches", [["bg1", "Spicy Zinger Burger", 350, "Crispy spicy zinger, fresh lettuce, creamy sauce, toasted bun.", "Crunchy", 1, "#c8802a"], ["bg2", "Spicy BBQ Club Sandwich", 400, "Spicy BBQ boti, creamy sauce and fresh fillings on toasted bread.", "Sandwich", 2, "#e9b44c"]]], ["Extra", [["x1", "Plain Paratha", 50, "Soft, flaky and perfectly cooked.", "Extra", 4, "#e2a64a"]]]],
-D=[["dfam", "Family Deal", 1400, "1 Malai Boti (1 plate), 1 Zinger Burger, 1 Sandwich, 2 Chatni Rolls, 2 Parathay", "Best value", 0, "#c9441f"], ["dl1", "Deal 1", 1000, "3 Zinger Burgers", "Deal", 1, "#c8802a"], ["dl2", "Deal 2", 999, "1 Club Sandwich, 1 Zinger Burger, 2 Chicken Chatni Rolls", "Deal", 1, "#c8802a"], ["dl3", "Deal 3", 750, "1 Chicken Arabic Shawarma, 1 Chatni Roll, 1 Club Sandwich", "Deal", 2, "#f3e2b8"], ["dl4", "Wraps and Rolls", 850, "1 Chatni Roll, 1 Sizzling, 1 Garlic Mayo Roll, 1 Cheese Shawarma", "Deal", 0, "#c9441f"]],A={},cart={};
-M.forEach(function(c){c[1].forEach(function(i){A[i[0]]=i})});D.forEach(function(i){A[i[0]]=i});
-var tb=$('#tb'),gr=$('#gr'),cur=-1;
-function card(i,n){return'<article class="card" data-t style="--i:'+n+'"><div class="ph"><span class="tg">'+i[4]+'</span>'+(IMG[i[0]]?'<img src="'+IMG[i[0]]+'" alt="'+i[1]+'">':F(i[5],i[6]))+'</div><div class="bd"><b>'+i[1]+'</b><small>'+i[3]+'</small><div class="ft"><span class="pr">Rs. '+i[2]+'</span><div class="q">'+(cart[i[0]]?'<button type="button" data-a="'+i[0]+'" data-v="-1" aria-label="Remove one">−</button><span>'+cart[i[0]].q+'</span><button type="button" data-a="'+i[0]+'" data-v="1" aria-label="Add one">+</button>':'<button class="ad" type="button" data-a="'+i[0]+'" data-v="1">Add</button>')+'</div></div></div></article>'}
-function draw(){if(cur===-1){tb.innerHTML='';gr.className='cats';gr.innerHTML=M.map(function(c,k){return'<button type="button" class="ctile" data-k="'+k+'" style="--i:'+k+'"><span class="ci">'+(IMG[c[1][0][0]]?'<img src="'+IMG[c[1][0][0]]+'" alt="">':F(c[1][0][5],c[1][0][6]))+'</span><b>'+c[0]+'</b><small>'+c[1].length+' items</small></button>'}).join('')+'<button type="button" class="ctile all" data-k="all"><b>View all items</b><small>Every dish on one page</small></button>'}else{tb.innerHTML='<button type="button" class="bk" data-k="-1">← All categories</button>';gr.className='grid';gr.innerHTML=(cur==='all'?M.reduce(function(a,c){return a.concat(c[1])},[]):M[cur][1]).map(card).join('')}$('#dl2').innerHTML=D.map(card).join('');tilt()}
-document.addEventListener('click',function(e){var b=e.target.closest('#menu [data-k]');if(b){cur=b.dataset.k=='all'?'all':+b.dataset.k;draw();$('#menu').scrollIntoView({behavior:'smooth'})}});
-document.addEventListener('click',function(e){var b=e.target.closest('[data-a]');if(b)upd(b.dataset.a,+b.dataset.v)});
-function upd(id,d){var q=(cart[id]?cart[id].q:0)+d;if(q<=0)delete cart[id];else cart[id]={q:q};ui();draw();toast(d>0?'Added to cart':'Cart updated');var h=$('#hb');h.classList.remove('bump');void h.offsetWidth;h.classList.add('bump')}
-function ui(){var n=0,s=0,h='';Object.keys(cart).forEach(function(id){var i=A[id],q=cart[id].q;n+=q;s+=q*i[2];h+='<div class="l"><div><b>'+i[1]+'</b><small>Rs. '+i[2]+' each</small><div class="q"><button type="button" data-a="'+id+'" data-v="-1" aria-label="Remove one">−</button><span>'+q+'</span><button type="button" data-a="'+id+'" data-v="1" aria-label="Add one">+</button></div></div><span class="lt">Rs. '+q*i[2]+'</span></div>'});
-$('#ln').innerHTML=h||'<div class="em"><h4>Your cart is empty</h4><p>Add some smoky rolls or burgers to start.</p></div>';$('#hb').textContent=n;$('#sb').textContent='Rs. '+s;$('#sm').textContent=n?n+(n>1?' items · Rs. ':' item · Rs. ')+s:'Your order is empty'}
-var tt;function toast(m){var t=$('#ts');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show')},1400)}
-function oc(o){$('#cw').classList.toggle('open',o);$('#cw').setAttribute('aria-hidden',!o)}
-$('#oc').onclick=$('#vc').onclick=function(){oc(1)};$('#cc').onclick=$('#ov').onclick=function(){oc(0)};addEventListener('keydown',function(e){if(e.key=='Escape')oc(0)});
-$('#cl').onclick=function(){cart={};ui();draw()};
-$('#co').onclick=function(){var ks=Object.keys(cart);if(!ks.length){toast('Your cart is empty');return}var s=0,t='Hi Keep Rollin’! I’d like to order:\n';ks.forEach(function(id){var i=A[id],q=cart[id].q;s+=q*i[2];t+='• '+q+' x '+i[1]+' (Rs. '+q*i[2]+')\n'});t+='Subtotal: Rs. '+s+'\nPlease confirm delivery charges and time.';open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank')};
-$$('[data-wa]').forEach(function(a){a.href='https://wa.me/'+WA+'?text='+encodeURIComponent('Hi Keep Rollin’! I’d like to place an order.');a.target='_blank';a.rel='noopener'});
-/* tilt */
-function tilt(){if(R||!matchMedia('(hover:hover)').matches)return;$$('[data-t]').forEach(function(c){c.onmousemove=function(e){var r=c.getBoundingClientRect();c.style.setProperty('--ty',((e.clientX-r.left)/r.width-.5)*14+'deg');c.style.setProperty('--tx',-((e.clientY-r.top)/r.height-.5)*14+'deg')};c.onmouseleave=function(){c.style.setProperty('--tx','0deg');c.style.setProperty('--ty','0deg')}})}
-draw();ui();
-/* reveal + counters */
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});$$('.rv').forEach(function(e,i){e.style.setProperty('--d',(i%3)*90+'ms');io.observe(e)});
-var wio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('go')})},{threshold:.3});wio.observe($('#wm'));
-function count(){$$('.stats [data-c]').forEach(function(e){var t=+e.dataset.c,d=+e.dataset.d||0,s=e.dataset.s||'',st=performance.now();(function f(n){var p=Math.min(1,(n-st)/1600),v=t*(1-Math.pow(1-p,3));e.textContent=(d?v.toFixed(1):Math.round(v))+s;if(p<1)requestAnimationFrame(f)})(st)})}
-addEventListener('load',function(){setTimeout(function(){document.body.classList.add('on');count()},500)});setTimeout(function(){document.body.classList.add('on')},3500);
-/* pointer */
-var stg=$('#stg'),gl=$('#glow'),gx=0,gy=0;
-addEventListener('mousemove',function(e){gx=e.clientX;gy=e.clientY;gl.style.transform='translate('+gx+'px,'+gy+'px)';var r=stg.getBoundingClientRect();var k=function(v){return Math.max(-1,Math.min(1,v))};if(!matchMedia('(hover:hover) and (pointer:fine)').matches)return;stg.style.setProperty('--mx',k(((e.clientX-r.left)/r.width-.5)*2));stg.style.setProperty('--my',k(((e.clientY-r.top)/r.height-.5)*2))},{passive:true});
-/* scroll loop */
-var P=$$('[data-p]'),zm=$('#zm'),rp=$('#rp'),rd=$('#rd'),dlw=$('#dlw'),len=rp.getTotalLength(),lastY=scrollY,vel=0,vh=innerHeight;
-addEventListener('resize',function(){vh=innerHeight});
-function loop(){var y=scrollY;vel+=((y-lastY)-vel)*.15;lastY=y;
-$('#pb').style.transform='scaleX('+(y/Math.max(1,document.documentElement.scrollHeight-vh))+')';
-P.forEach(function(e){var r=e.getBoundingClientRect();if(r.bottom<-200||r.top>vh+200)return;e.style.setProperty('--p',Math.min(1,Math.max(0,(vh-r.top)/(vh+r.height))).toFixed(3))});
-var r=zm.getBoundingClientRect();zm.style.setProperty('--z',Math.min(1,Math.max(0,-r.top/(r.height-vh))).toFixed(3));
-var d=dlw.getBoundingClientRect();if(d.bottom>0&&d.top<vh){var p=Math.min(1,Math.max(0,(vh-d.top)/(vh+d.height*.4))),pt=rp.getPointAtLength(p*len);rp.style.strokeDasharray=len;rp.style.strokeDashoffset=len*(1-p);rd.style.left=pt.x/1000*d.width+'px';rd.style.top=pt.y/420*d.height+'px'}
-$$('.mq').forEach(function(m){m._x+=m._d*(1.2+Math.abs(vel)*.5);var w=m.firstChild.scrollWidth/2;if(m._x<-w)m._x+=w;if(m._x>0)m._x-=w;m.firstChild.style.transform='translate3d('+m._x+'px,0,0)'});
-requestAnimationFrame(loop)}
-if(!R)loop();
-/* ember canvas */
-var cv=$('#fx'),cx=cv.getContext('2d'),E=[],W,H;
-function rs(){var d=Math.min(devicePixelRatio||1,1.5);W=cv.width=innerWidth*d;H=cv.height=innerHeight*d;cx.setTransform(d,0,0,d,0,0)}rs();addEventListener('resize',rs);
-function mk(i){return{x:Math.random()*innerWidth,y:i?Math.random()*innerHeight:innerHeight+10,r:Math.random()*2.2+.6,s:Math.random()*.8+.3,w:Math.random()*6,a:Math.random()*.6+.3}}
-for(var i=0;i<(innerWidth<700?30:70);i++)E.push(mk(1));
-function em(t){cx.clearRect(0,0,innerWidth,innerHeight);cx.globalCompositeOperation='lighter';E.forEach(function(p,k){p.y-=p.s+Math.abs(vel)*.15;p.x+=Math.sin(t/900+p.w)*.5;if(p.y<-10)E[k]=p=mk(0);var g=cx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);g.addColorStop(0,'rgba(255,200,90,'+p.a+')');g.addColorStop(1,'rgba(242,107,29,0)');cx.fillStyle=g;cx.beginPath();cx.arc(p.x,p.y,p.r*4,0,6.3);cx.fill()});if(!document.hidden)requestAnimationFrame(em);else document.addEventListener('visibilitychange',function f(){document.removeEventListener('visibilitychange',f);requestAnimationFrame(em)})}
-if(!R)requestAnimationFrame(em);
-})();
-</script>
-</body>
-</html>
+‎<!DOCTYPE html>
+‎<html lang="en">
+‎<head>
+‎<meta charset="utf-8">
+‎<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+‎<title>Keep Rollin’ | Charcoal BBQ Rolls, Burgers &amp; Shawarma in Karachi</title>
+‎<meta name="description" content="Roll specialists in Shah Faisal Colony, Karachi. Charcoal-grilled boti, rolls, burgers and shawarma. Open till 2 AM. Order on WhatsApp.">
+‎<meta name="theme-color" content="#0b0b0b">
+‎<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+‎<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap">
+‎<style>
+‎:root{--bg:#0b0b0b;--card:#151515;--line:#2a2a2a;--fire:#f26b1d;--gold:#f7b32b;--cream:#fff6e6;--ash:#b5afa6;--wa:#25d366;--ease:cubic-bezier(.22,1,.36,1);--sp:cubic-bezier(.34,1.56,.64,1);--wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0 30Q100 0 200 30T400 30V60H0Z'/%3E%3C/svg%3E");color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+‎*,*::before,*::after{box-sizing:inherit}
+‎html{scroll-behavior:smooth;scroll-padding-top:80px}
+‎body{margin:0;background:var(--bg);color:var(--cream);font:400 16px/1.6 Poppins,system-ui,sans-serif;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+‎body:not(.on){overflow:hidden}
+‎h1,h2,h3{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.02em;line-height:.95;margin:0}
+‎a{color:inherit;text-decoration:none}
+‎.w{max-width:1120px;margin:0 auto;padding:0 20px}
+‎main,header,footer{position:relative;z-index:1}html,body,main{overflow-x:clip;max-width:100%}
+‎#fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+‎#pb{position:fixed;top:0;left:0;height:4px;width:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--fire),var(--gold));z-index:90}
+‎#glow{position:fixed;left:0;top:0;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;background:radial-gradient(circle,rgba(242,107,29,.22),transparent 65%);pointer-events:none;z-index:0;display:none}
+‎@media(hover:hover) and (pointer:fine){#glow{display:block}}
+‎.btn{display:inline-block;border:0;border-radius:12px;padding:13px 26px;font:600 15px Poppins,sans-serif;cursor:pointer;background:var(--fire);color:#fff;position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
+‎.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.45) 50%,transparent 65%);translate:-120% 0;animation:sheen 3.5s ease-in-out infinite}
+‎@keyframes sheen{60%,100%{translate:120% 0}}
+‎.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 30px rgba(242,107,29,.5)}.btn:active{transform:scale(.95)}
+‎.btn.g{background:var(--gold);color:#1a1200}.btn.o{background:transparent;border:2px solid #444;color:var(--cream)}.btn.wa{background:var(--wa);color:#04210f}.btn.k{background:#1a0a00;color:var(--cream)}
+‎:is(a,button):focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+‎/* header */
+‎header{position:sticky;z-index:40;top:env(safe-area-inset-top,0px);background:rgba(11,11,11,.7);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+‎header .w{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+‎.logo{font:400 32px 'Bebas Neue';color:var(--gold);white-space:nowrap;animation:glowt 3s ease-in-out infinite}
+‎@keyframes glowt{50%{text-shadow:0 0 26px rgba(247,179,43,.7)}}
+‎nav{display:flex;gap:26px;font-size:14px;font-weight:500}nav a{color:var(--ash);position:relative;transition:color .3s}nav a:hover{color:var(--cream)}
+‎nav a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:linear-gradient(90deg,var(--fire),var(--gold));scale:0 1;transform-origin:left;transition:scale .35s var(--ease)}nav a:hover::after{scale:1}
+‎.hr{display:flex;gap:10px;align-items:center}
+‎.cb{display:inline-flex;align-items:center;gap:8px;background:none;border:2px solid #3a3a3a;color:var(--cream);border-radius:12px;padding:9px 14px;font:600 14px Poppins;cursor:pointer;transition:border-color .3s,transform .3s var(--sp)}.cb:hover{border-color:var(--fire)}
+‎#hb{min-width:22px;height:22px;border-radius:99px;background:var(--fire);font-size:12px;line-height:22px;text-align:center}#hb.bump{animation:bump .5s var(--sp)}
+‎@keyframes bump{35%{transform:scale(1.7)}}
+‎@media(max-width:820px){nav{display:none}}@media(max-width:520px){.hr>.btn{display:none}}
+‎/* loader */
+‎#ld{position:fixed;inset:0;z-index:200;background:var(--fire);color:#1a0a00;display:grid;place-items:center;transition:transform 1s cubic-bezier(.77,0,.18,1)}
+‎#ld::after{content:"";position:absolute;left:0;right:0;top:100%;height:60px;background:var(--fire);scale:1 -1;-webkit-mask:var(--wave) repeat-x/400px 100%;mask:var(--wave) repeat-x/400px 100%}
+‎#ld b{font-size:90px;animation:rb 1s ease-in-out infinite alternate}#ld p{position:absolute;bottom:14%;margin:0;font:400 30px 'Bebas Neue';letter-spacing:.1em}
+‎@keyframes rb{from{transform:translateX(-50px) rotate(-200deg)}to{transform:translateX(50px) rotate(200deg)}}
+‎body.on #ld{transform:translateY(calc(-100% - 70px))}
+‎/* hero */
+‎.hero{position:relative;padding:60px 0 110px;overflow:hidden}
+‎.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none;animation:pu 6s ease-in-out infinite}
+‎.hero::before{width:900px;height:900px;right:-260px;top:-300px;background:radial-gradient(circle,rgba(242,107,29,.35),transparent 65%)}
+‎.hero::after{width:700px;height:700px;left:-260px;bottom:-360px;background:radial-gradient(circle,rgba(247,179,43,.18),transparent 65%);animation-delay:-3s}
+‎@keyframes pu{50%{opacity:.5;transform:scale(1.1)}}
+‎.hero .w{display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:center;position:relative;z-index:1}
+‎h1{font-size:clamp(58px,10vw,126px)}
+‎.ch{display:inline-block;white-space:nowrap}.ch i{display:inline-block;font-style:normal;opacity:0;transform:rotateX(-100deg) translateY(70%);transform-origin:50% 100%;transition:transform .9s var(--sp) calc(var(--i)*35ms + .5s),opacity .5s calc(var(--i)*35ms + .5s)}
+‎body.on .ch i{opacity:1;transform:none}
+‎.hl .ch i{background:linear-gradient(100deg,var(--gold),var(--fire),var(--gold));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 5s linear infinite}
+‎@keyframes shine{to{background-position:-200% 0}}
+‎.hero p{color:#cfc8bc;font-size:18px;max-width:470px;margin:18px 0 26px}
+‎.cta{display:flex;flex-wrap:wrap;gap:12px}
+‎.stats{display:flex;gap:30px;margin-top:32px;flex-wrap:wrap}.stats b{display:block;font:400 40px 'Bebas Neue';color:var(--gold);line-height:1}.stats span{font-size:13px;color:var(--ash)}
+‎.stage{position:relative;aspect-ratio:1;max-width:520px;width:100%;justify-self:center;--mx:0;--my:0}
+‎.stage::before{content:"";position:absolute;inset:6%;border-radius:50%;background:conic-gradient(from 0deg,var(--fire),var(--gold),transparent 40%,var(--fire));filter:blur(40px);opacity:.5;animation:sp 9s linear infinite}
+‎@keyframes sp{to{rotate:360deg}}
+‎.fd{position:absolute;translate:calc(var(--mx)*var(--dp)*1px) calc(var(--my)*var(--dp)*1px);filter:drop-shadow(0 26px 24px rgba(0,0,0,.6))}
+‎.fd svg{display:block;width:100%;animation:bob var(--t,6s) ease-in-out infinite}
+‎@keyframes bob{50%{transform:translateY(-16px) rotate(4deg)}}
+‎.f1{width:68%;left:16%;top:12%;--dp:-26}.f2{width:38%;left:-2%;bottom:6%;--dp:34;--t:5s}.f3{width:34%;right:0;bottom:12%;--dp:44;--t:7s}.f4{width:24%;right:8%;top:0;--dp:-50;--t:4.5s}
+‎.seal{position:absolute;right:-2%;top:44%;width:120px;height:120px;z-index:3;animation:sp 14s linear infinite}.seal text{font:400 15px 'Bebas Neue';letter-spacing:.12em;fill:var(--cream)}
+‎.seal span{position:absolute;inset:0;display:grid;place-items:center;font-size:36px;animation:sp 14s linear infinite reverse}
+‎.stk{position:absolute;left:var(--x);top:var(--y);z-index:0;font-size:clamp(34px,6vw,64px);line-height:1;pointer-events:none;translate:0 calc((var(--p,.5) - .5)*var(--k)*-2px);rotate:calc(var(--p,.5)*var(--r)*1deg);filter:drop-shadow(2px 0 0 #fff6e6) drop-shadow(-2px 0 0 #fff6e6) drop-shadow(0 8px 10px rgba(0,0,0,.35))}
+‎@media(max-width:820px){.hero .w{grid-template-columns:1fr}.stage{max-width:380px}}
+‎/* marquee */
+‎.mq{overflow:hidden;white-space:nowrap;padding:14px 0;font:400 clamp(40px,7vw,76px)/1 'Bebas Neue';background:var(--gold);color:#1a1200;border-block:3px solid #1a1200;rotate:-1.2deg;margin:-18px -4% 0;position:relative;z-index:3}
+‎.mq.b{rotate:1.2deg;background:#151515;color:transparent;-webkit-text-stroke:1.5px var(--gold);margin-top:-6px;z-index:2}
+‎.mq div{display:inline-block;will-change:transform}.mq span{margin:0 .35em}.mq em{font-style:normal;color:var(--fire);-webkit-text-stroke:0}
+‎/* sections */
+‎section{padding:70px 0;position:relative}
+‎.wv{position:absolute;left:0;right:0;height:60px;background:var(--c);-webkit-mask:var(--wave) repeat-x 0 0/400px 100%;mask:var(--wave) repeat-x 0 0/400px 100%;animation:wm 12s linear infinite;pointer-events:none}
+‎.wv.t{top:-59px}.wv.d{bottom:-59px;scale:1 -1;animation-direction:reverse}
+‎@keyframes wm{to{-webkit-mask-position:400px 0;mask-position:400px 0}}
+‎.jc{background:var(--fire);color:#1a0a00;text-align:center;--c:var(--fire);padding:110px 0 120px;z-index:1;margin-top:30px}
+‎.mega{font-size:clamp(64px,16vw,200px);line-height:.86}.mega .ln{display:block;translate:calc((.5 - var(--p,.5))*var(--d)*70vw) 0;opacity:clamp(0,calc(1.6 - var(--p,.5)*0 - abs(.5 - var(--p,.5))*2.4),1)}
+‎.mega .ln:nth-child(2){color:transparent;-webkit-text-stroke:2px #1a0a00}
+‎.jc p{max-width:52ch;margin:22px auto 26px;font-weight:500;color:#2a1304}
+‎.hd2{font-size:clamp(44px,7vw,72px)}.sub{color:var(--ash);margin:6px 0 20px}
+‎.tabs{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none;position:sticky;top:calc(64px + env(safe-area-inset-top,0px));z-index:5;background:rgba(11,11,11,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+‎.tabs button{white-space:nowrap;padding:9px 18px;border-radius:99px;border:1px solid var(--line);background:none;color:var(--ash);font:500 14px Poppins;cursor:pointer;transition:.3s var(--ease)}
+‎.tabs button.on{background:linear-gradient(100deg,var(--gold),var(--fire));color:#1a1200;border-color:transparent;font-weight:600;transform:scale(1.06)}
+‎.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;perspective:1000px;margin-top:18px}
+‎.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transform:rotateX(var(--tx,0deg)) rotateY(var(--ty,0deg));transition:transform .25s ease-out,border-color .3s,box-shadow .3s;animation:ci .7s var(--ease) both;animation-delay:calc(var(--i)*70ms)}
+‎@keyframes ci{from{opacity:0;transform:translateY(40px) rotateX(-18deg) scale(.94)}}
+‎.card:hover{border-color:var(--gold);box-shadow:0 20px 50px rgba(0,0,0,.6),0 10px 44px rgba(242,107,29,.3)}
+‎.ph{position:relative;aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 40%,#3a2210,#151515 70%)}
+‎.ph::before{content:"";position:absolute;width:140%;aspect-ratio:1;background:conic-gradient(from 0deg,transparent,rgba(247,179,43,.18),transparent 30%);animation:sp 8s linear infinite}
+‎.ph svg{width:62%;position:relative;transition:transform .7s var(--ease);animation:bob 5s ease-in-out infinite;animation-delay:calc(var(--i)*-.8s)}.card:hover .ph svg{transform:scale(1.18) rotate(-8deg)}
+‎.tg{position:absolute;top:10px;left:10px;background:var(--gold);color:#1a1200;font-size:11px;font-weight:600;padding:3px 10px;border-radius:7px;z-index:2}
+‎.bd{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}.bd b{font-weight:600;line-height:1.3}.bd small{color:var(--ash);font-size:13px;line-height:1.5;flex:1}
+‎.ft{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+‎.pr{font:400 30px 'Bebas Neue';color:var(--gold)}
+‎.q{display:flex;align-items:center;gap:8px}.q button{width:38px;height:38px;border-radius:11px;border:1px solid var(--fire);background:none;color:var(--cream);font-size:20px;cursor:pointer;transition:transform .2s var(--sp),background .25s}.q button:hover{background:var(--fire)}.q button:active{transform:scale(.8)}
+‎.q button.ad{width:auto;padding:0 18px;font:600 14px Poppins;background:var(--fire)}.q span{min-width:18px;text-align:center;font-weight:600}
+‎.ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-top:18px}.ctile{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;color:inherit;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px;animation:ci .7s var(--ease) both;animation-delay:calc(var(--i)*70ms);transition:transform .3s var(--sp),border-color .3s,box-shadow .3s}.ctile:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 16px 40px rgba(242,107,29,.3)}.ctile .ci{display:block;width:96px;margin-bottom:6px}.ctile .ci svg{width:100%;display:block;animation:bob 5s ease-in-out infinite}.ctile b{font:400 34px 'Bebas Neue';color:var(--gold)}.ctile small{color:var(--ash)}.ctile.all{background:linear-gradient(135deg,var(--fire),#b8470b);justify-content:flex-end;min-height:150px}.ctile.all b{color:#fff}.ctile.all small{color:#ffe2c4}.bk{background:none;border:1px solid var(--fire);color:var(--cream);border-radius:99px;padding:9px 18px;font:600 14px Poppins;cursor:pointer;transition:background .3s}.bk:hover{background:var(--fire)}.deals{background:var(--card);border-block:1px solid var(--line)}
+‎.deals .card{border-color:var(--gold);background:linear-gradient(var(--card),var(--card)) padding-box,conic-gradient(from var(--a,0deg),var(--fire),var(--gold),var(--fire)) border-box;border:2px solid transparent;animation:ci .7s var(--ease) both,bs 4s linear infinite}
+‎@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}@keyframes bs{to{--a:360deg}}
+‎/* zoom */
+‎.zoom{height:250vh;padding:0}.stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+‎.fr{position:absolute;inset:0;overflow:hidden;background:radial-gradient(circle at 50% 70%,#7a2a06,#1a0a00 70%);clip-path:inset(calc((1 - var(--z,0))*18%) calc((1 - var(--z,0))*28%) round calc((1 - var(--z,0))*36px))}
+‎.fl{position:absolute;bottom:-10%;width:34vmax;height:34vmax;border-radius:50%;background:radial-gradient(circle,rgba(247,179,43,.8),rgba(242,107,29,.5) 40%,transparent 70%);filter:blur(30px);animation:fl 3s ease-in-out infinite}
+‎@keyframes fl{50%{translate:0 -6%;scale:1.2;opacity:.7}}
+‎.fr .big{position:absolute;left:50%;top:50%;width:min(70vmin,520px);margin:calc(min(70vmin,520px)/-2) 0 0 calc(min(70vmin,520px)/-2);rotate:calc(var(--z,0)*200deg);scale:calc(.6 + var(--z,0)*.8);opacity:.5}
+‎.zt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px;opacity:clamp(0,calc(var(--z,0)*3 - .5),1);translate:0 calc((1 - var(--z,0))*60px)}
+‎.zt h2{font-size:clamp(70px,16vw,210px);text-shadow:0 8px 40px rgba(0,0,0,.6)}.zt p{margin:14px 0 22px;color:#f1e8d8}
+‎/* delivery */
+‎.dv{background:var(--gold);color:#1a1200;--c:var(--gold);padding:110px 0 124px;z-index:1}
+‎.dl{position:relative;min-height:520px}.dt{position:relative;z-index:2;max-width:580px}
+‎.dv h2{font-size:clamp(50px,8.4vw,108px)}.dv p{margin:16px 0 24px;font-weight:500;color:#3a2700;max-width:44ch}
+‎.tr{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}.tr path{fill:none;stroke-linecap:round}
+‎.bgp{stroke:rgba(26,18,0,.3);stroke-width:3;stroke-dasharray:3 14;animation:dm 2s linear infinite}@keyframes dm{to{stroke-dashoffset:-34}}
+‎.fgp{stroke:#1a1200;stroke-width:4}
+‎.rd{position:absolute;left:0;top:0;z-index:3;font-size:50px;margin:-30px 0 0 -30px;line-height:1}
+‎.pola{position:absolute;z-index:1;width:clamp(96px,17vw,180px);background:var(--cream);padding:9px 9px 30px;border-radius:6px;box-shadow:0 20px 44px rgba(60,20,0,.45);rotate:var(--r);transition:rotate .4s var(--sp),scale .4s var(--sp);animation:bob 5s ease-in-out infinite}
+‎.pola svg{width:100%;background:radial-gradient(circle,#ffd48a,#f26b1d);border-radius:3px;display:block}.pola:hover{rotate:0deg;scale:1.1}
+‎.pola i{position:absolute;left:0;right:0;bottom:6px;text-align:center;font:400 18px 'Bebas Neue';letter-spacing:.06em;color:#2a1304;font-style:normal}
+‎.d1{left:58%;top:0}.d2{left:74%;bottom:0;animation-delay:-2s}.d3{left:40%;bottom:0;animation-delay:-3s}
+‎@media(max-width:820px){.dl{min-height:700px}.pola{width:30vw}.d1{left:34%;top:auto;bottom:28%}.d2{left:64%}.d3{left:3%}}
+‎/* about */
+‎.two{display:grid;grid-template-columns:1fr 1fr;gap:44px}.two p{color:var(--ash)}.inf p{margin:0 0 10px}.inf a:not(.btn){color:var(--gold)}
+‎.live{display:inline-flex;align-items:center;gap:8px;color:var(--wa);font-weight:600}.live::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--wa);animation:pg 1.6s infinite}
+‎@keyframes pg{0%{box-shadow:0 0 0 0 rgba(37,211,102,.7)}100%{box-shadow:0 0 0 14px transparent}}
+‎@media(max-width:820px){.two{grid-template-columns:1fr}}
+‎/* wordmark */
+‎.mk{overflow:hidden;text-align:center;padding:90px 0 60px}
+‎.wm{display:flex;justify-content:center;white-space:nowrap;font:400 clamp(48px,16vw,250px)/.9 'Bebas Neue';color:var(--fire);-webkit-text-stroke:.05em var(--cream);paint-order:stroke fill;text-shadow:0 .06em 0 #8a3207}
+‎.wm i{font-style:normal;display:inline-block;opacity:0;transform:translateY(60%) scale(.6) rotate(-8deg);transition:transform .7s var(--sp) calc(var(--i)*55ms),opacity .4s calc(var(--i)*55ms)}
+‎.wm.go i{opacity:1;transform:none;animation:wv 2.6s ease-in-out calc(var(--i)*-.2s) infinite}
+‎@keyframes wv{50%{transform:translateY(-.1em) rotate(-3deg)}}
+‎.wm .sp{width:.28em}
+‎footer{border-top:1px solid var(--line);padding:24px 0;color:var(--ash);font-size:14px;text-align:center}
+‎.rv{opacity:0;translate:0 40px;transition:opacity .9s var(--ease) var(--d,0ms),translate .9s var(--ease) var(--d,0ms)}.rv.in{opacity:1;translate:none}
+‎/* bar, cart */
+‎#bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid #333;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px))}
+‎#bar .r{max-width:1120px;margin:0 auto;display:flex;gap:10px;align-items:center;justify-content:space-between}#bar .r>div{display:flex;gap:8px}#bar .btn{padding:11px 18px;font-size:14px}#sm{font-size:14px;font-weight:600}
+‎#cw{position:fixed;inset:0;z-index:150;visibility:hidden;transition:visibility 0s .5s}#cw.open{visibility:visible;transition-delay:0s}
+‎#ov{position:absolute;inset:0;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;transition:opacity .4s}#cw.open #ov{opacity:1}
+‎#dr{position:absolute;top:0;right:0;bottom:0;width:min(440px,100vw);background:var(--card);border-left:1px solid #333;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .5s var(--ease);padding-top:env(safe-area-inset-top,0px)}#cw.open #dr{transform:none}
+‎.dh{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}.dh h3{font-size:36px;color:var(--gold)}
+‎.x{width:40px;height:40px;border-radius:10px;border:1px solid #3a3a3a;background:none;color:var(--cream);font-size:22px;cursor:pointer;transition:rotate .3s}.x:hover{rotate:90deg;border-color:var(--fire)}
+‎#ln{flex:1;overflow-y:auto;padding:8px 20px}
+‎.l{di
